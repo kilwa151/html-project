@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formulaire</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f7f7f7;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    form {
+      background-color: white;
+      padding: 25px 35px;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      width: 350px;
+    }
+    h2 {
+      text-align: center;
+      color: #333;
+    }
+    label {
+      display: block;
+      margin-top: 10px;
+      font-weight: bold;
+    }
+    input, select, textarea, button {
+      width: 100%;
+      padding: 8px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 14px;
+    }
+    textarea {
+      resize: vertical;
+    }
+    .buttons {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 15px;
+    }
+    button {
+      width: 48%;
+      cursor: pointer;
+      font-weight: bold;
+      border: none;
+      padding: 10px;
+    }
+    .envoyer {
+      background-color: #4CAF50;
+      color: white;
+    }
+    .annuler {
+      background-color: #f44336;
+      color: white;
+    }
+    a.retour {
+      display: block;
+      text-align: center;
+      margin-top: 10px;
+      text-decoration: none;
+      color: #5380da;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <form>
+    <h2 id="titre">Formulaire</h2>
+
+    <label for="nom">Nom :</label>
+    <input type="text" id="nom" name="nom" required>
+
+    <label for="prenom">Prénom :</label>
+    <input type="text" id="prenom" name="prenom" required>
+
+    <label for="email">Email :</label>
+    <input type="email" id="email" name="email" placeholder="exemple@email.com" required>
+
+    <label for="filiere">Filière :</label>
+    <select id="filiere" name="filiere" required>
+      <option value="">-- Choisissez votre filière --</option>
+      <option value="informatique">Cybersecurite</option>
+      <option value="reseaux">IAIL</option>
+      <option value="securite">CFF</option>
+      <option value="genie-logiciel">GEER</option>
+      <option value="genie-logiciel">SRI</option>
+      <option value="genie-logiciel">CAVSN</option>
+    </select>
+
+    <label for="question">Question :</label>
+    <textarea id="question" name="question" rows="4" placeholder="Écrivez votre question ici..." required></textarea>
+
+    <div class="buttons">
+      <button type="submit" class="envoyer">Envoyer</button>
+      <button type="reset" class="annuler">Annuler</button>
+    </div>
+
+    <a href="timetable.html" class="retour">← Retour à l'emploi du temps</a>
+  </form>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const Pr = params.get("Pr");
+    if (Pr) {
+      document.getElementById("titre").textContent = "Pr. " + Pr;
+    }
+  </script>
+</body>
+</html>
