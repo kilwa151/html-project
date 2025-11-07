@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CV </title>
+  <style>
+    :root {
+      --bg:#f7f9fb; --card:#ffffff; --accent:#0b6fa4; --muted:#6b7280; 
+      --glass: rgba(11,111,164,0.08);
+      --radius:12px; --maxw:900px; --pad:22px;
+    }
+    *  { box-sizing:border-box; }
+    html,body {
+      height:100%; margin:0;
+      font-family:Inter,system-ui,Segoe UI,Roboto,"Helvetica Neue",Arial;
+      background:var(--bg); color:#0b1220;
+    }
+    .wrap { max-width:var(--maxw); margin:28px auto; padding:18px; }
+
+    .card {
+      display:grid;
+      grid-template-columns:280px 1fr;
+      gap:20px;
+      background:var(--card);
+      border-radius:var(--radius);
+      padding:var(--pad);
+      box-shadow:0 8px 30px rgba(12,20,30,0.06);
+    }
+
+    .profile { padding:6px; }
+    .avatar {
+      height:112px; width:112px;
+      border-radius:14px;
+      background:linear-gradient(135deg,var(--glass),transparent);
+      display:flex; align-items:center; justify-content:center;
+      font-weight:700; color:var(--accent); font-size:28px;
+    }
+    .nom { font-size:20px; font-weight:800; margin-top:12px; }
+    .titre { font-weight:600; color:var(--muted); font-size:13px; margin-top:4px; }
+
+    .contact { margin-top:18px; font-size:14px; }
+    .contact p { margin:8px 0; color:#0b1220; }
+
+    .fiche {
+      display:inline-block;
+      background:var(--glass);
+      padding:6px 8px;
+      border-radius:999px;
+      font-weight:600;
+      margin:6px 6px 0 0;
+    }
+
+    .skills { margin-top:10px; }
+    .skill {
+      display:block;
+      background:#eef7fb;
+      padding:6px 10px;
+      border-radius:6px;
+      margin-bottom:6px;
+      color:var(--accent);
+      font-weight:600;
+    }
+
+    hr.soft {
+      border:0;
+      border-top:1px solid #eef2f6;
+      margin:16px 0;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <div class="card" role="main">
+      <aside class="profile" aria-label="Profile sidebar">
+        <div style="display:flex;gap:14px;align-items:center">
+          <div class="avatar">Ka</div>
+          <div>
+            <div class="nom">Kanza Lbasri</div>
+            <div class="titre">Étudiante en Cybersécurité</div>
+          </div>
+        </div>
+
+        <div class="contact">
+          <p><strong>Email :</strong> kanzalbasri07@gmail.com</p>
+          <p><strong>Téléphone :</strong> +212 772018778</p>
+          <p><strong>Localisation :</strong> Ouarzazate, Maroc</p>
+        </div>
+
+        <hr class="soft">
+
+        <div>
+          <div style="font-weight:700;margin-bottom:8px">Diplômes</div>
+          <div class="skills">
+            <span class="skill">2023/2024 : Baccalauréat obtenu</span>
+            <span class="skill">2025/2026 : DEUG obtenu</span>
+            <span class="skill">2026/2027 : Licence </span>
+          </div>
+        </div>
+        <hr class="soft">
+        <div>
+          <div style="font-weight:700;margin-bottom:8px">Compétence</div>
+          <div class="skills">
+            <span class="skill">HTML</span>
+            <span class="skill">CSS</span>
+            <span class="skill">C</span>
+            <span class="skill">Python</span>
+          </div>
+          <hr class="soft">
+          <div>
+          <div style="font-weight:700;margin-bottom:8px">Loisir</div>
+          <div class="skills">
+            <span class="skill">Passionnée par la cybersécurité et les nouvelles technologies</span>
+            <span class="skill">Fan d’anime et de culture japonais</span>
+            <span class="skill">Amatrice de cuisine, surtout seafood</span>
+            <span class="skill">Curieuse des voyages et des nouvelles expériences</span>
+          </div>
+        
+      </aside>
+
+      
+</body>
+</html>
