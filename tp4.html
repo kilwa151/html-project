@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Grid Layout - Cybersécurité S3</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+
+        header {
+            text-align: center;
+            color: white;
+            margin-bottom: 40px;
+        }
+
+        header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        header p {
+            font-size: 1.1em;
+            opacity: 0.9;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .box {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .box::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .box:hover {
+            transform: scale(1.05) translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+        }
+
+        .box:hover::before {
+            opacity: 1;
+        }
+
+        .box-number {
+            font-size: 3em;
+            font-weight: bold;
+            color: #667eea;
+            margin-bottom: 15px;
+            transition: color 0.3s ease;
+        }
+
+        .box:hover .box-number {
+            color: #764ba2;
+        }
+
+        .box-title {
+            font-size: 1.5em;
+            color: #333;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .box-description {
+            color: #666;
+            font-size: 0.95em;
+            line-height: 1.6;
+        }
+
+        .box1 {
+            grid-column: 1 / 2;
+            grid-row: 1 / 2;
+            background: linear-gradient(135deg, #fff 0%, #f0f4ff 100%);
+        }
+
+        .box2 {
+            grid-column: 2 / 4;
+            grid-row: 1 / 2;
+            background: linear-gradient(135deg, #fff 0%, #fff0f8 100%);
+        }
+
+        .box3 {
+            grid-column: 1 / 2;
+            grid-row: 2 / 3;
+            background: linear-gradient(135deg, #fff 0%, #f0fff4 100%);
+        }
+
+        .box4 {
+            grid-column: 2 / 3;
+            grid-row: 2 / 3;
+            background: linear-gradient(135deg, #fff 0%, #fffbf0 100%);
+        }
+
+        .box5 {
+            grid-column: 3 / 4;
+            grid-row: 2 / 3;
+            background: linear-gradient(135deg, #fff 0%, #fff0f0 100%);
+        }
+
+        .box6 {
+            grid-column: 1 / 4;
+            grid-row: 3 / 4;
+            background: linear-gradient(135deg, #fff 0%, #f0f8ff 100%);
+            min-height: 150px;
+        }
+
+        .icon {
+            font-size: 2.5em;
+            margin-bottom: 15px;
+            transition: transform 0.3s ease;
+        }
+
+        .box:hover .icon {
+            transform: rotateY(360deg);
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+
+            .box1, .box2, .box3, .box4, .box5, .box6 {
+                grid-column: 1 / 2;
+            }
+
+            .box1 { grid-row: 1 / 2; }
+            .box2 { grid-row: 2 / 3; }
+            .box3 { grid-row: 3 / 4; }
+            .box4 { grid-row: 4 / 5; }
+            .box5 { grid-row: 5 / 6; }
+            .box6 { grid-row: 6 / 7; }
+
+            header h1 {
+                font-size: 1.8em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>🎓 Web - CSS</h1>
+        <p>Faculté Polydisciplinaire de Ouarzazate | Cybersécurité S3 | 2025/2026</p>
+    </header>
+
+    <div class="container">
+        <div class="box box1">
+            <div class="icon">🔐</div>
+            <div class="box-number">01</div>
+            <div class="box-title">Sécurité Système</div>
+            <div class="box-description">Protection des données et des systèmes informatiques</div>
+        </div>
+
+        <div class="box box2">
+            <div class="icon">🌐</div>
+            <div class="box-number">02</div>
+            <div class="box-title">Développement Web</div>
+            <div class="box-description">Création d'interfaces modernes et responsives avec HTML, CSS et JavaScript</div>
+        </div>
+
+        <div class="box box3">
+            <div class="icon">💻</div>
+            <div class="box-number">03</div>
+            <div class="box-title">POO</div>
+            <div class="box-description">L'acronyme de Programmation Orientée Objet</div>
+        </div>
+
+        <div class="box box4">
+            <div class="icon">🛡️</div>
+            <div class="box-number">04</div>
+            <div class="box-title">Systèmes et Réseaux</div>
+            <div class="box-description">l'ensemble des composants matériels et logiciels qui permettent de traiter des données</div>
+        </div>
+
+        <div class="box box5">
+            <div class="icon">📊</div>
+            <div class="box-number">05</div>
+            <div class="box-title">Management</div>
+            <div class="box-description">l'ensemble des techniques pour organiser, planifier, diriger et contrôler</div>
+        </div>
+
+        <div class="box box6">
+            <div class="icon">🚀</div>
+            <div class="box-number">06</div>
+            <div class="box-title">Projet Final - Mise en Page Complète</div>
+            <div class="box-description">Cette boîte occupe toute la largeur de la grille et démontre la flexibilité du CSS Grid Layout. Passez la souris sur les boîtes pour voir les effets de transition !</div>
+        </div>
+    </div>
+</body>
+</html>
