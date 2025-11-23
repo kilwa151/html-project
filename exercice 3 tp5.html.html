@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            background: #ffffff;
+            color: #000000;
+        }
+
+        .container {
+            text-align: center;
+            border: 1px solid #000;
+            padding: 40px;
+            border-radius: 10px;
+            width: 350px;
+            background: #fff;
+        }
+
+        h1 {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        p {
+            font-size: 15px;
+            color: #333;
+            margin-bottom: 25px;
+        }
+
+        button {
+            background: #000;
+            color: #fff;
+            border: none;
+            padding: 12px 35px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #222;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Quiz Interactif</h1>
+        <p>Testez vos connaissances générales.</p>
+        <button onclick="lancerQuiz()">Commencer</button>
+    </div>
+
+    <script>
+        const QUESTIONS = [
+            ["Quelle est la capitale de la France ?", "Paris"],
+            ["Combien font 5 + 7 ?", "12"],
+            ["Quel est le plus grand océan du monde ?", "Pacifique"],
+            ["En quelle année l'homme a-t-il marché sur la Lune pour la première fois ?", "1969"],
+            ["Quelle est la planète la plus proche du Soleil ?", "Mercure"]
+        ];
+
+        function lancerQuiz() {
+    let s = 0;
+
+    for (let i = 0; i < QUESTIONS.length; i++) {
+        let q = QUESTIONS[i][0];
+        let c = QUESTIONS[i][1];
+
+        let userAnswer = prompt("Question " + (i + 1) + " : " + q);
+
+        if (userAnswer === null) {
+            alert("Quiz annulé.");
+            return;
+        }
+
+        if (userAnswer.trim().toLowerCase() === c.toLowerCase()) {
+            alert("Bonne réponse.");
+            s++;
+        } else {
+            alert("Mauvaise réponse. Correct : " + c);
+        }
+    }
+
+    alert("Quiz terminé.\nScore : " + s + "/" + QUESTIONS.length);
+}
+
+    </script>
+</body>
+</html>
